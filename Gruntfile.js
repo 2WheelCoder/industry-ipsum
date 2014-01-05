@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['Gruntfile.js', '**/*.js'],
+      files: ['Gruntfile.js', 'js/*.js'],
       options: {
         // options here to override JSHint defaults
         globals: {
@@ -15,10 +15,26 @@ module.exports = function(grunt) {
       }
     },
 
+    express: {
+      options: {
+        // Override defaults here
+      },
+      dev: {
+        options: {
+          script: 'index.js'
+        }
+      }
+    },
+
     watch: {
       files: ['<%= jshint.files %>'],
-      options: {
-        livereload: true
+      tasks: ['jshint'],
+      express: {
+        files:  [ 'index.js' ],
+        tasks:  [ 'express:dev' ],
+        options: {
+          spawn: false // Without this option specified express won't be reloaded
+        }
       }
     }
   });
@@ -27,6 +43,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', ['jshint']);
 
-  grunt.registerTask('watch', ['watch']);
+  grunt.registerTask('dev', ['express:dev', 'watch']);
 
 };

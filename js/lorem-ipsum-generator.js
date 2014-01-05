@@ -16,7 +16,7 @@
 	}
 
 	function fixie_fetch(min, max, func, join) {
-		join || (join = ' ');
+		// join || (join = ' ');
 		var fixie_length = constrain(min, max);
 		var result = [];
 		for (var fixie_i = 0; fixie_i < fixie_length; fixie_i++) {

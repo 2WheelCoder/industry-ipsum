@@ -12,9 +12,16 @@
     "url": "git://github.com/inghamemerson/industry-ipsum.git"
   },
   "contributors": [
-    {"name": "Jamie Emerson"},
-    {"name": "Adam Noffsinger"},
-    {"name": "Nick Stevens", "email": "nick@nickstevens.com"}
+    {
+      "name": "Jamie Emerson"
+    },
+    {
+      "name": "Adam Noffsinger"
+    },
+    {
+      "name": "Nick Stevens",
+      "email": "nick@nickstevens.com"
+    }
   ],
   "license": "BSD-2-Clause",
   "bugs": {
@@ -26,6 +33,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-jshint": "~0.8.0",
     "express": "~3.4.7",
-    "load-grunt-tasks": "~0.2.1"
+    "load-grunt-tasks": "~0.2.1",
+    "grunt-express-server": "~0.4.11"
   }
 }
