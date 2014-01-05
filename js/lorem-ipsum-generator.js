@@ -53,18 +53,7 @@
 	// display paragraphs same page
 
 	$(document).ready(function() {
-		$('#generate').click(function(evt) {
-			evt.preventDefault();
-
-			// get number of paragraphs from text box
-			var paragraphLength = $('#paragraphs').val();
-
-			latin = $('#latin:checkbox:checked').val();
-			
-			// get neat or latin
-
-			generateIpsum(paragraphLength);
-		});
+		var generator = new Generator();
+		generator.init();
 	});
-
 })(jQuery);

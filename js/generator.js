@@ -4,23 +4,35 @@ var Generator = function() {
 		latin: false,
 		pTags: false
 	};
-
-	// listen for click of 'generate'
-
-	// get user input for number of paragraphs and latin
-
-	// insert paragraphs into page
 };
 
 Generator.prototype = {
 	getUserOptions: function() {
-		this.options.paragraphCount = $('#paragraph-count').val();
-		this.options.latin = $('#latin:checkbox:checked').val();
-		this.options.pTags = $('#p-tags:checkbox:checked').val();
-	},
-	generate: function() {
+		var pCount = $('#p-count').val();
+		if ( pCount !== '' ) {
+			this.options.paragraphCount = pCount;
+		}
 
+		if ( $('#latin:checkbox:checked').val() !== undefined ) {
+			this.options.latin = true;
+		}
+
+		if ( $('#p-tags:checkbox:checked').val() !== undefined ) {
+			this.options.pTags = true;
+		}
 	},
+
+	generate: function() {
+		var content = '';
+
+		for (var x = 0; x < this.options.paragraphCount; x++) {
+			var paragraph = new Paragraph();
+			content += paragraph.content;
+		}
+
+		return content;
+	},
+
 	init: function() {
 		var that = this;
 		$('#generator').submit(function(evt) {
@@ -28,7 +40,11 @@ Generator.prototype = {
 
 			var options = that.getUserOptions(),
 				startupIpsum = that.generate();
-			$('#main-content').prepend(startupIpsum);
+
+			$('.intro-copy').fadeOut(function() {
+				$('.mainContent').prepend('<div class="startup-ipsum"></div>');
+				$('.startup-ipsum').html(startupIpsum);	
+			});
 		});
 	}
 };
