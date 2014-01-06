@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
       "0" : "moleskine",
       "1" : "responsive",
@@ -30,3 +31,36 @@
       "28" : "iterate"
       "29" : "latte"
 }
+=======
+{ "startupTerms": [
+      "moleskine",
+      "responsive",
+      "cortado",
+      "food-truck",
+      "agile",
+      "pivot",
+      "ideate",
+      "iterate",
+      "actionable insight",
+      "prototype",
+      "big data",
+      "grok",
+      "thinker-maker-doer",
+      "co-working",
+      "pair programming",
+      "experiential",
+      "parallax",
+      "long shadow",
+      "human-centered design",
+      "bootstrapping",
+      "innovate",
+      "user centered design",
+      "physical computing",
+      "SpaceTeam",
+      "unicorn",
+      "sticky note",
+      "waterfall is so 2000 and late",
+      "workflow",
+      "iterate"
+]}
+>>>>>>> 99863ab3cc281a3995ba83ec4e23f4acabf9b8a2

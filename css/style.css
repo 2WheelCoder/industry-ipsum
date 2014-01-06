@@ -1,0 +1,152 @@
+/*---Global Styling---*/
+
+
+* {
+	margin: 0;
+	padding: 0;
+
+}
+
+header, footer {
+	background-color: #3e454c;
+}
+
+body {
+	font-family: "Gill Sans", "futura-pt",sans-serif;
+	font-weight: 300;
+	font-size: 16px;
+	background-color: #fff6e5;
+}
+
+p>a {
+	color: #ff7f66;
+	text-decoration: none;
+}
+
+p>a:hover {
+	border-bottom: 1px dotted #ff7f66;
+}
+
+/*Clearfix*/
+
+.clearfix:after {
+	content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/*---Content Styling---*/
+
+/*Header Styling*/
+
+header {
+	height: 110px;
+	width: 100%;
+}
+
+#logoContainer {
+	width: 400px;
+	height: 90px;
+	margin: auto;
+}
+
+#logoBadge {
+	width: 87px;
+	height: 87px;
+	float: left;
+}
+
+#logoText {
+	width: 293px;
+	height: 53px;
+	float: right;
+	margin: 23px 10px 0px 0px;
+}
+
+#logoContainer:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/*Intro Styling*/
+
+.mainContent p {
+	font-weight: 400;
+	font-size: 1.125em;
+	width: 480px;
+	text-align: center;
+	margin: auto;
+}
+
+.mainContent p:nth-child(1) {
+	margin-top: 130px;
+}
+
+.mainContent p:nth-child(2) {
+	margin-top: 10px;
+	margin-bottom: 100px;
+}
+
+/*Form Styling*/
+
+form {
+	max-width: 320px;
+	margin: 0 auto 100px auto;
+
+}
+
+input {
+	margin-bottom: 30px;
+}
+
+#paragraph-count {
+	margin-left: 100px;
+}
+
+form>button {
+	margin: 0px 100px;
+}
+
+/*Footer Styling*/
+
+footer {
+	padding: 40px;
+}
+
+footer>div {
+	width: 33%;
+	float: left;
+}
+
+footer>div:nth-child(3) {
+	text-align: center;
+}
+
+.footertext p {
+	font-size: 0.875em;
+	color: #fff6e5;
+	margin-bottom: 30px;
+}
+
+.footertext p:last-of-type {
+	margin-bottom: 0;
+}
+
+#socialLinks a img {
+	height: 65px;
+	width: 65px;
+}
+
+
+
+
+
+
+
+
+
+
