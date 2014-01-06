@@ -20,24 +20,25 @@
 		</header>
 		
 		<div class="mainContent">
-			<p>Your release date is fast approaching and you&#39;re racing to produce an MVP &mdash; you don&#39;t have the time or money to write actual copy.</p>
+			<div class="intro-copy">
+				<p>Your release date is fast approaching and you&#39;re racing to produce an MVP &mdash; you don&#39;t have the time or money to write actual copy.</p>
 
-			<p>Instead, use Startup Ipsum to generate a slew of articulate tech jargon and use the saved time to code in a coffee shop and plan for your inevitable TechCrunch interview.</p>
+				<p>Instead, use Startup Ipsum to generate a slew of articulate tech jargon and use the saved time to code in a coffee shop and plan for your inevitable TechCrunch interview.</p>
+			</div>
 
-			<form>
-				<label for="paragraph-count">Paragraphs:</label>
-				<input type="text" id="paragraph-count" placeholder="(i.e. 5)">
-				
-				<label for="lorem-start">I attended an Ivy League university (add Latin).</label>
-				<input type="checkbox" id="lorem-start">
-				
+			<form id="generator">
+				<label for="p-count">Paragraphs:</label>
+				<input type="text" id="p-count" placeholder="(i.e. 5)">
+
+				<label for="latin">I attended an Ivy League university (add Latin).</label>
+				<input type="checkbox" id="latin">
+
 				<label for="p-tags">Duh, you code, so include &lt;p&gt; tags.</label>
 				<input type="checkbox" id="p-tags">
 				
 				<button type="submit">
 					Generate
 				</button>	
-
 			</form>
 		</div>
 
@@ -63,5 +64,11 @@
 			</div>
 		</footer>
 
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="js/term-library.js"></script>
+		<script src="js/sentence.js"></script>
+		<script src="js/paragraph.js"></script>
+		<script src="js/generator.js"></script>
+		<script src="js/lorem-ipsum-generator.js"></script>
 	</body>
 </html>

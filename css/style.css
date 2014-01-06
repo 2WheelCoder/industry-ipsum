@@ -87,6 +87,10 @@ header {
 
 /*Intro Styling*/
 
+.intro-copy {
+	margin: 90px 0px 90px 0px;
+}
+
 .mainContent p {
 	font-weight: 400;
 	font-size: 1.125em;
@@ -95,13 +99,13 @@ header {
 	margin: auto;
 }
 
-.mainContent p:nth-child(1) {
+/*.mainContent p:nth-child(1) {
 	margin-top: 130px;
-}
+}*/
 
 .mainContent p:nth-child(2) {
 	margin-top: 10px;
-	margin-bottom: 100px;
+/*	margin-bottom: 100px;*/
 }
 
 /*Form Styling*/
@@ -140,7 +144,7 @@ input[type="text"]:focus {
 	outline: none;
 }
 
-#paragraph-count {
+#p-count {
 	margin: 0 120px 30px 25px;
 }
 
