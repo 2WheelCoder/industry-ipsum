@@ -1,4 +1,4 @@
-var Generator = function() {
+var Generator = function(terms) {
 	this.options = {
 		paragraphCount: 5,
 		latin: false,

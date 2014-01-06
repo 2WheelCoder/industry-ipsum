@@ -1,27 +1,30 @@
 var Paragraph = function() {
 	this.latin = false;
 	this.sentenceCount = this.generateRandomNumber(3, 5);
-	this.content = '';
-	this.create();
+	this.content = this.create();
 };
 
 Paragraph.prototype = {
 	create: function() {
+		var content = '';
+
 		for (var x = 0; x < this.sentenceCount; x++) {
 			if ( x === 0 ) {
-				this.content += '<p>';
+				content += '<p>';
 			}
 			var sentence = new Sentence();
-			this.content += sentence.content;
+			content += sentence.content;
 
 			if ( x !== this.sentenceCount-1 ) {
-				this.content += ' ';
+				content += ' ';
 			} else {
-				this.content += '</p>';
+				content += '</p>';
 			}
 		}
 
-		console.log(this.sentenceCount, this.content);
+		console.log(content);
+
+		return content;
 	},
 
 	generateRandomNumber: function(min, max) {
