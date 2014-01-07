@@ -22,8 +22,6 @@ Paragraph.prototype = {
 			}
 		}
 
-		console.log(content);
-
 		return content;
 	},
 

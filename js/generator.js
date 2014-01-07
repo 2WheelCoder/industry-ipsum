@@ -34,16 +34,21 @@ Generator.prototype = {
 	},
 
 	init: function() {
-		var that = this;
-		$('#generator').submit(function(evt) {
+		var that = this,
+			$generator = $('#generator');
+
+		$generator.submit(function(evt) {
 			evt.preventDefault();
 
 			var options = that.getUserOptions(),
-				startupIpsum = that.generate();
+				startupIpsumContent = that.generate();
 
 			$('.intro-copy').fadeOut(function() {
-				$('.mainContent').prepend('<div class="startup-ipsum"></div>');
-				$('.startup-ipsum').html(startupIpsum);	
+				if( $('.startup-ipsum').length === 0 ) {
+					$('.mainContent').prepend('<div class="startup-ipsum"></div>');
+					$generator.children('button').html('Iterate!');
+				}
+				$('.startup-ipsum').html(startupIpsumContent);
 			});
 		});
 	}

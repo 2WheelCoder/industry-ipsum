@@ -7,3 +7,8 @@
 		generator.init();
 	});
 })(jQuery);
+
+// TODO: Enable iterate
+// TODO: Offer latin option
+// TODO: Add P tags option
+// TODO: Rotate header images
