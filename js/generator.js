@@ -1,20 +1,23 @@
-var Generator = function(terms) {
+var Generator = function(startupJSONURL) {
+	this.latinLibrary = new TermLibrary('js/lorem-ipsum.json').terms;
+	this.startupLibrary = new TermLibrary(startupJSONURL).terms;
+	this.terms = this.startupLibrary;
+	
 	this.options = {
 		paragraphCount: 5,
-		latin: false,
 		pTags: false
 	};
 };
 
 Generator.prototype = {
-	getUserOptions: function() {
+	setUserOptions: function() {
 		var pCount = $('#p-count').val();
 		if ( pCount !== '' ) {
 			this.options.paragraphCount = pCount;
 		}
 
 		if ( $('#latin:checkbox:checked').val() !== undefined ) {
-			this.options.latin = true;
+			this.terms = this.startupLibrary.concat(this.latinLibrary);
 		}
 
 		if ( $('#p-tags:checkbox:checked').val() !== undefined ) {
@@ -26,7 +29,7 @@ Generator.prototype = {
 		var content = '';
 
 		for (var x = 0; x < this.options.paragraphCount; x++) {
-			var paragraph = new Paragraph();
+			var paragraph = new Paragraph(this.terms);
 			content += paragraph.content;
 		}
 
@@ -40,8 +43,9 @@ Generator.prototype = {
 		$generator.submit(function(evt) {
 			evt.preventDefault();
 
-			var options = that.getUserOptions(),
-				startupIpsumContent = that.generate();
+			that.setUserOptions();
+
+			var startupIpsumContent = that.generate();
 
 			$('.intro-copy').fadeOut(function() {
 				if( $('.startup-ipsum').length === 0 ) {

@@ -1,5 +1,5 @@
-var Paragraph = function() {
-	this.latin = false;
+var Paragraph = function(terms) {
+	this.terms = terms;
 	this.sentenceCount = this.generateRandomNumber(3, 5);
 	this.content = this.create();
 };
@@ -12,7 +12,7 @@ Paragraph.prototype = {
 			if ( x === 0 ) {
 				content += '<p>';
 			}
-			var sentence = new Sentence();
+			var sentence = new Sentence(this.terms);
 			content += sentence.content;
 
 			if ( x !== this.sentenceCount-1 ) {
