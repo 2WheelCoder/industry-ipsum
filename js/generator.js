@@ -1,20 +1,25 @@
-var Generator = function(terms) {
+var Generator = function(startupJSONURL) {
+	this.latinLibrary = new TermLibrary('js/lorem-ipsum.json').terms;
+	this.startupLibrary = new TermLibrary(startupJSONURL).terms;
+	this.terms = this.startupLibrary;
+	
 	this.options = {
 		paragraphCount: 5,
-		latin: false,
 		pTags: false
 	};
 };
 
 Generator.prototype = {
-	getUserOptions: function() {
+	setUserOptions: function() {
 		var pCount = $('#p-count').val();
 		if ( pCount !== '' ) {
 			this.options.paragraphCount = pCount;
 		}
 
 		if ( $('#latin:checkbox:checked').val() !== undefined ) {
-			this.options.latin = true;
+			this.terms = this.startupLibrary.concat(this.latinLibrary);
+		} else {
+			this.terms = this.startupLibrary;
 		}
 
 		if ( $('#p-tags:checkbox:checked').val() !== undefined ) {
@@ -25,25 +30,43 @@ Generator.prototype = {
 	generate: function() {
 		var content = '';
 
+		if ( this.options.pTags ) {
+			content += '<pre><code>';
+		}
+
 		for (var x = 0; x < this.options.paragraphCount; x++) {
-			var paragraph = new Paragraph();
+			content += this.options.pTags ? '&lt;p&gt;' : '<p>';
+
+			var paragraph = new Paragraph(this.terms);
 			content += paragraph.content;
+
+			content += this.options.pTags ? '&lt;/p&gt;' : '</p>';
+		}
+
+		if ( this.options.pTags ) {
+			content += '</pre></code>';
 		}
 
 		return content;
 	},
 
 	init: function() {
-		var that = this;
-		$('#generator').submit(function(evt) {
+		var that = this,
+			$generator = $('#generator');
+
+		$generator.submit(function(evt) {
 			evt.preventDefault();
 
-			var options = that.getUserOptions(),
-				startupIpsum = that.generate();
+			that.setUserOptions();
+
+			var startupIpsumContent = that.generate();
 
 			$('.intro-copy').fadeOut(function() {
-				$('.mainContent').prepend('<div class="startup-ipsum"></div>');
-				$('.startup-ipsum').html(startupIpsum);	
+				if( $('.startup-ipsum').length === 0 ) {
+					$('.mainContent').prepend('<div class="startup-ipsum"></div>');
+					$generator.children('button').html('Iterate!');
+				}
+				$('.startup-ipsum').html(startupIpsumContent);
 			});
 		});
 	}
