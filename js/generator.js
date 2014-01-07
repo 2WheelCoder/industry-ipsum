@@ -18,6 +18,8 @@ Generator.prototype = {
 
 		if ( $('#latin:checkbox:checked').val() !== undefined ) {
 			this.terms = this.startupLibrary.concat(this.latinLibrary);
+		} else {
+			this.terms = this.startupLibrary;
 		}
 
 		if ( $('#p-tags:checkbox:checked').val() !== undefined ) {
@@ -28,9 +30,21 @@ Generator.prototype = {
 	generate: function() {
 		var content = '';
 
+		if ( this.options.pTags ) {
+			content += '<pre><code>';
+		}
+
 		for (var x = 0; x < this.options.paragraphCount; x++) {
+			content += this.options.pTags ? '&lt;p&gt;' : '<p>';
+
 			var paragraph = new Paragraph(this.terms);
 			content += paragraph.content;
+
+			content += this.options.pTags ? '&lt;/p&gt;' : '</p>';
+		}
+
+		if ( this.options.pTags ) {
+			content += '</pre></code>';
 		}
 
 		return content;

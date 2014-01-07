@@ -9,16 +9,11 @@ Paragraph.prototype = {
 		var content = '';
 
 		for (var x = 0; x < this.sentenceCount; x++) {
-			if ( x === 0 ) {
-				content += '<p>';
-			}
 			var sentence = new Sentence(this.terms);
 			content += sentence.content;
 
 			if ( x !== this.sentenceCount-1 ) {
 				content += ' ';
-			} else {
-				content += '</p>';
 			}
 		}
 

@@ -10,18 +10,8 @@ Sentence.prototype = {
 
 		for (var x = 0; x < this.termCount; x++) {
 			term = this.terms[this.generateRandomNumber(0, this.terms.length - 1 )];
-
-			if ( x === 0 ) {
-				content += this.capitalize(term);
-			} else {
-				content += term;
-			}
-
-			if ( x !== this.termCount-1 ) {
-				content += ' ';
-			} else {
-				content += '.';
-			}
+			content += x === 0 ? this.capitalize(term) : term;
+			content += x !== this.termCount-1 ? ' ' : '.';
 		}
 
 		return content;

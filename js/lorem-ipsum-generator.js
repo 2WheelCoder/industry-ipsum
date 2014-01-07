@@ -3,6 +3,5 @@ jQuery(document).ready(function() {
 	generator.init();
 });
 
-// TODO: Add P tags option
 // TODO: Rotate header images
 // TODO: Google Analytics
