@@ -11,14 +11,16 @@
 	<body>
 		
 		<header>
-			<div id="logoContainer">
-				<img id="logoBadge" src="images/badge-x2.png" alt="Iterate!">
-				<a href="#">
-					<h1><img id="logoText" src="images/si-logo-x2.png" alt="Startup Ipsum"></h1>
-				</a>
+			<div id="header-border">
+				<div id="logoContainer">
+					<img id="logoBadge" src="images/badge-x2.png" alt="Iterate!">
+					<a href="#">
+						<h1><img id="logoText" src="images/si-logo-x2.png" alt="Startup Ipsum"></h1>
+					</a>
+				</div>
 			</div>	
 		</header>
-		
+
 		<div class="mainContent">
 			<div class="intro-copy">
 				<p>Your release date is fast approaching and you&#39;re racing to produce an MVP &mdash; you don&#39;t have the time or money to write actual copy.</p>
@@ -30,15 +32,15 @@
 				<label for="p-count">Paragraphs:</label>
 				<input type="text" id="p-count" placeholder="(i.e. 5)">
 
-				<label for="latin">I attended an Ivy League university (add Latin).</label>
-				<input type="checkbox" id="latin">
+				<p>I attended an Ivy League university (add Latin):</p>
+				<input type="checkbox" id="latin" class="checkbox">
+				<label for="latin"></label>
 
-				<label for="p-tags">Duh, you code, so include &lt;p&gt; tags.</label>
-				<input type="checkbox" id="p-tags">
+				<p>Duh, you code, so include &lt;p&gt; tags:</p>
+				<input type="checkbox" id="p-tags" class="checkbox">
+				<label for="p-tags"></label>
 				
-				<button type="submit">
-					Generate
-				</button>	
+				<button type="submit">Generate</button>	
 			</form>
 		</div>
 
@@ -50,7 +52,7 @@
 			</div>
 
 			<div id="socialLinks">
-				<p>Share</p>
+				<img id="share-button" src="images/share.png" >
 				<div>
 					<a href="#"><img src="images/facebook-x2.png" alt="Share to Facebook"></a>
 					<a href="#"><img src="images/twitter-x2.png" alt="Share to Twitter"></a>
@@ -59,7 +61,7 @@
 			</div>
 
 			<div class="footertext">
-				<p>A weekend project by a few grad students at <a href="#">BDW</a>.</p>
+				<p>A weekend project by a few grad students at <a href="http://bdw.colorado.edu/">BDW</a>.</p>
 				<p>BDW is a grad school that creates generative thinker-doers who integrate design thinking, technology, and entrepreneurism to create innovative products and experiences.</p>
 			</div>
 		</footer>
