@@ -1,9 +1,7 @@
-(function($) {
-	$.termLibrary = new TermLibrary();
-	$.terms = $.termLibrary.terms;
+jQuery(document).ready(function() {
+	var generator = new Generator('js/startup-ipsum.json');
+	generator.init();
+});
 
-	$(document).ready(function() {
-		var generator = new Generator();
-		generator.init();
-	});
-})(jQuery);
+// TODO: Rotate header images
+// TODO: Google Analytics

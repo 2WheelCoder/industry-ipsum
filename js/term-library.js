@@ -1,18 +1,22 @@
-var TermLibrary = function() {
-	this.terms = null;
-	this.getTerms();
+var TermLibrary = function(jsonURL) {
+	this.jsonURL = jsonURL;
+	this.terms = this.getTerms();
 };
 
 TermLibrary.prototype = {
 	getTerms: function() {
-		var that = this;
+		var that = this,
+			terms = [];
+
 		$.ajax({
 			type: 'GET',
 			async: false,
-			url: 'js/startup-ipsum.json',
+			url: that.jsonURL,
 			success: function(data) {
-				that.terms = data.startupTerms;
+				terms = data.terms;
 			}
 		});
+
+		return terms;
 	}
 };

@@ -57,7 +57,7 @@ button[type="submit"]:hover {
 
 header {
 	height: 110px;
-	padding: 10px 0 10px 0; /*not sure why I needed to do it this way*/
+	padding: 10px 0 10px 0;
 }
 
 #logoContainer {
@@ -85,10 +85,17 @@ header {
 	clear: both;
 }
 
+#header-border {
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #fff6e5;  
+	border-top: 1px solid #fff6e5;  
+}
+
 /*Intro Styling*/
 
 .intro-copy {
-	margin: 90px 0px 90px 0px;
+	margin: 90px 0px 64px 0px;
 }
 
 .mainContent p {
@@ -99,31 +106,22 @@ header {
 	margin: auto;
 }
 
-/*.mainContent p:nth-child(1) {
-	margin-top: 130px;
-}*/
-
 .mainContent p:nth-child(2) {
 	margin-top: 10px;
-/*	margin-bottom: 100px;*/
 }
 
 /*Form Styling*/
 
 form {
-	width: 320px;
+	width: 380px;
 	margin: 0 auto 100px auto;
 
 }
 
-input {
-	margin-bottom: 30px;
-}
-
-
-
 form>button {
-	margin: 0px 100px;
+	margin-top: 34px;
+	margin-right: 100px;
+	margin-left: 100px;
 }
 
 input[type="text"] {
@@ -148,23 +146,53 @@ input[type="text"]:focus {
 	margin: 0 120px 30px 25px;
 }
 
-label {
+.checkbox {
+  display: none;
+}
+
+.checkbox + label {
+  padding: 20px 19px 18px 19px;
+  background: url(../images/unchecked.png) no-repeat left center;
+}
+
+.checkbox:checked + label {
+  background:url(../images/checked.png) no-repeat left center;
+}
+
+#generator label:nth-of-type(2){
+	margin-left: 35px;
+}
+
+#generator label:nth-of-type(3) {
+margin-left: 96px;
+}
+
+#generator p {
+	font-weight: 200;
+	font-size: 1em;
+	text-align: left;
 	margin-bottom: 30px;
+	display: inline-block;
 }
 
 /*Footer Styling*/
 
 footer {
-	padding: 40px;
+	padding: 30px;
 }
 
 footer>div {
 	width: 33%;
 	float: left;
+	min-height: 127px;
 }
 
 footer>div:nth-child(3) p {
 	text-align: center;
+	max-width: 374px;
+	float: right;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .footertext p {
@@ -180,19 +208,14 @@ footer>div:nth-child(3) p {
 #socialLinks a img {
 	height: 65px;
 	width: 65px;
+	margin: 0 11px 0 11px;
 }
-
-/*#socialLinks a img:hover {
-	color: #ff7f66;
-}
-*/
 
 #socialLinks p {
 	font-family: "lobster", "Gill Sans", "futura-pt", sans-serif; /*Can't get Lobster working*/
 	font-size: 1.500em;
 	color: #ff7f66;
 	font-weight: 400;
-
 }
 
 #socialLinks div, #socialLinks p {
@@ -203,6 +226,24 @@ footer>div:nth-child(3) p {
 	margin-top: 30px;
 }
 
+footer>div:nth-child(1) p:first-of-type {
+	margin-top: 10px;
+}
 
+footer>div:nth-child(3) p:first-of-type {
+	margin: 15px 43px 30px 43px; 
+}
 
+#share-button {
+	display: block;
+	width: 75px;
+	height: 26px;
+	margin: 5px auto 0 auto;
+}
+
+/*#footer-border {
+	width: 100%;
+	height: auto;
+	border-bottom: 1px solid #fff6e5; 
+}*/
 
