@@ -28,7 +28,7 @@ Generator.prototype = {
 	},
 
 	generate: function() {
-		var content = '';
+		var content = '<h2>Crushing it.</h2>';
 
 		if ( this.options.pTags ) {
 			content += '<pre><code>';

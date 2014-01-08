@@ -1,6 +1,5 @@
 /*---Global Styling---*/
 
-
 * {
 	margin: 0;
 	padding: 0;
@@ -14,7 +13,7 @@ header, footer {
 body {
 	font-family: "Gill Sans", "futura-pt", sans-serif;
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 100%;
 	background-color: #fff6e5;
 }
 
@@ -36,11 +35,13 @@ button[type="submit"] {
 	font-weight: 400;
 	font-size: 1.125em;
 	color: #fff;
+	outline: none;
 }
 
 button[type="submit"]:hover {
 	background-color: #ff7f66;
 }
+
 
 /*Clearfix*/
 
@@ -56,14 +57,13 @@ button[type="submit"]:hover {
 /*Header Styling*/
 
 header {
-	height: 110px;
-	padding: 10px 0 10px 0;
+	padding: 0.313em 0;
 }
 
 #logoContainer {
 	width: 400px;
 	height: 90px;
-	margin: 12px auto;
+	margin: 0.938em auto;
 }
 
 #logoBadge {
@@ -79,23 +79,14 @@ header {
 	margin: 23px 10px 0px 0px;
 }
 
-#logoContainer:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
 #header-border {
-	width: 100%;
-	height: auto;
 	border-bottom: 1px solid #fff6e5;  
-	border-top: 1px solid #fff6e5;  
 }
 
 /*Intro Styling*/
 
 .intro-copy {
-	margin: 90px 0px 64px 0px;
+	margin: 90px auto 64px auto;
 }
 
 .mainContent p {
@@ -110,6 +101,10 @@ header {
 	margin-top: 10px;
 }
 
+.intro-copy span {
+	font-style: italic;
+}
+
 /*Form Styling*/
 
 form {
@@ -119,9 +114,7 @@ form {
 }
 
 form>button {
-	margin-top: 34px;
-	margin-right: 100px;
-	margin-left: 100px;
+	margin: 34px 120px 0 120px;
 }
 
 input[type="text"] {
@@ -178,20 +171,20 @@ margin-left: 96px;
 /*Footer Styling*/
 
 footer {
-	padding: 30px;
+	padding-top: 5px;
 }
 
-footer>div {
+#footer-border>div {
 	width: 33%;
 	float: left;
 	min-height: 127px;
 }
 
-footer>div:nth-child(3) p {
+#footer-border>div:nth-child(3) p {
 	text-align: center;
 	max-width: 374px;
 	float: right;
-	margin-right: auto;
+	margin-right: 30px;
 	margin-left: auto;
 }
 
@@ -199,10 +192,7 @@ footer>div:nth-child(3) p {
 	font-size: 0.875em;
 	color: #fff6e5;
 	margin-bottom: 30px;
-}
-
-.footertext p:last-of-type {
-	margin-bottom: 0;
+	margin-left: 30px;
 }
 
 #socialLinks a img {
@@ -223,27 +213,48 @@ footer>div:nth-child(3) p {
 }
 
 #socialLinks div {
+	margin-top: 25px;
+}
+
+#footer-border>div:nth-child(1) p:first-of-type {
 	margin-top: 30px;
 }
 
-footer>div:nth-child(1) p:first-of-type {
-	margin-top: 10px;
-}
-
-footer>div:nth-child(3) p:first-of-type {
-	margin: 15px 43px 30px 43px; 
+#footer-border>div:nth-child(3) p:first-of-type {
+	margin: 35px 70px 30px 43px; 
 }
 
 #share-button {
 	display: block;
 	width: 75px;
 	height: 26px;
-	margin: 5px auto 0 auto;
+	margin: 25px auto 0 auto;
 }
 
-/*#footer-border {
+#footer-border {
 	width: 100%;
 	height: auto;
-	border-bottom: 1px solid #fff6e5; 
-}*/
+	border-top: 1px solid #fff6e5; 
+}
+
+/*---Ipsum Styling---*/
+
+.startup-ipsum h2 {
+	margin: 90px auto 64px auto;
+	font-weight: 400;
+	font-size: 1.125em;
+	max-width: 480px;
+	text-align: center;
+}
+
+.startup-ipsum p, .startup-ipsum pre code {
+	font-weight: 200;
+	font-size: 1em;
+	margin-bottom: 30px;
+	max-width: 50%;
+}
+
+.startup-ipsum p:last-of-type {
+	margin-bottom: 90px;
+}
 
