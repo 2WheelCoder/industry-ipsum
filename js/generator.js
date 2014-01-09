@@ -30,21 +30,23 @@ Generator.prototype = {
 	generate: function() {
 		var content = '<h2>Crushing it.</h2>';
 
-		if ( this.options.pTags ) {
-			content += '<pre><code>';
-		}
+		
 
 		for (var x = 0; x < this.options.paragraphCount; x++) {
+			if ( this.options.pTags ) {
+				content += '<code>';
+			}
+
 			content += this.options.pTags ? '&lt;p&gt;' : '<p>';
 
 			var paragraph = new Paragraph(this.terms);
 			content += paragraph.content;
 
 			content += this.options.pTags ? '&lt;/p&gt;' : '</p>';
-		}
 
-		if ( this.options.pTags ) {
-			content += '</pre></code>';
+			if ( this.options.pTags ) {
+				content += '</code>';
+			}
 		}
 
 		return content;

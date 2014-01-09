@@ -247,14 +247,24 @@ footer {
 	text-align: center;
 }
 
-.startup-ipsum p, .startup-ipsum pre code {
+.startup-ipsum p {
 	font-weight: 200;
 	font-size: 1em;
 	margin-bottom: 30px;
 	max-width: 50%;
 }
 
-.startup-ipsum p:last-of-type {
+.startup-ipsum p:last-of-type, .startup-ipsum code:last-of-type {
 	margin-bottom: 90px;
+}
+
+.startup-ipsum code {
+	font-family: inherit;
+	font-weight: 200;
+	font-size: 1em;
+	max-width: 50%;
+	display: block;
+	text-align: center;
+	margin: 0 auto 1.875em auto;
 }
 
