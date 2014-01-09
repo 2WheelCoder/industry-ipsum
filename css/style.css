@@ -268,3 +268,44 @@ footer {
 	margin: 0 auto 1.875em auto;
 }
 
+/*---Creator Styling---*/
+
+.creator-headshot {
+	height: 7.813em;
+	width: 7.813em;
+	display: block;
+	margin: 0 auto;
+}
+
+.creator-profile h2, .creator-profile p  {
+	text-align: center;
+}
+
+.creator-profile h2 {
+	font-family: "Gill Sans", "futura-pt", sans-serif;
+	font-weight: 300;
+	font-size: 1em;
+	max-width: 8.4375em;
+}
+
+.creator-profile a, .creator-profile span {
+	font-size: .875em;
+}
+
+.creator-profile {
+	width: 10em;
+	float: left;
+}
+
+#creator-container {
+	margin: 14.375em auto 14.375em auto;
+}
+
+
+
+
+
+
+
+
+
