@@ -12,9 +12,7 @@ var Generator = function(startupJSONURL) {
 Generator.prototype = {
 	setUserOptions: function() {
 		var pCount = $('#p-count').val();
-		if ( pCount !== '' ) {
-			this.options.paragraphCount = pCount;
-		}
+		if ( pCount !== '' ) this.options.paragraphCount = pCount;
 
 		if ( $('#latin:checkbox:checked').val() !== undefined ) {
 			this.terms = this.startupLibrary.concat(this.latinLibrary);
@@ -24,18 +22,16 @@ Generator.prototype = {
 
 		if ( $('#p-tags:checkbox:checked').val() !== undefined ) {
 			this.options.pTags = true;
+		} else {
+			this.options.pTags = false;
 		}
 	},
 
 	generate: function() {
 		var content = '<h2>Crushing it.</h2>';
 
-		
-
 		for (var x = 0; x < this.options.paragraphCount; x++) {
-			if ( this.options.pTags ) {
-				content += '<code>';
-			}
+			if ( this.options.pTags ) content += '<code>';
 
 			content += this.options.pTags ? '&lt;p&gt;' : '<p>';
 
@@ -44,9 +40,7 @@ Generator.prototype = {
 
 			content += this.options.pTags ? '&lt;/p&gt;' : '</p>';
 
-			if ( this.options.pTags ) {
-				content += '</code>';
-			}
+			if ( this.options.pTags ) content += '</code>';
 		}
 
 		return content;

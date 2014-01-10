@@ -11,10 +11,7 @@ Paragraph.prototype = {
 		for (var x = 0; x < this.sentenceCount; x++) {
 			var sentence = new Sentence(this.terms);
 			content += sentence.content;
-
-			if ( x !== this.sentenceCount-1 ) {
-				content += ' ';
-			}
+			if ( x !== this.sentenceCount-1 ) content += ' ';
 		}
 
 		return content;
