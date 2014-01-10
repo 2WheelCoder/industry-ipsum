@@ -27,14 +27,14 @@ p>a:hover {
 }
 
 button[type="submit"] {
-	height: 44px;
-	width: 140px;
+	height: 2.750em;
+	width: 8.75em;
 	background-color: #3e454c;
 	border: none;
 	font-family: inherit;
 	font-weight: 400;
 	font-size: 1.125em;
-	color: #fff;
+	color: #fff6e5;
 	outline: none;
 }
 
@@ -61,22 +61,22 @@ header {
 }
 
 #logoContainer {
-	width: 400px;
-	height: 90px;
+	width: 25em;
+	height: 5.625em;
 	margin: 0.938em auto;
 }
 
 #logoBadge {
-	width: 87px;
-	height: 87px;
+	width: 5.4375em;
+	height: 5.4375em;
 	float: left;
 }
 
 #logoText {
-	width: 293px;
-	height: 53px;
+	width: 9.15625em;
+	height: 1.65625em;
 	float: right;
-	margin: 23px 10px 0px 0px;
+	margin: .71875em .3125em 0 0;
 }
 
 #header-border {
@@ -86,19 +86,19 @@ header {
 /*Intro Styling*/
 
 .intro-copy {
-	margin: 90px auto 64px auto;
+	margin: 5.625em auto 4em auto;
 }
 
 .mainContent p {
 	font-weight: 400;
 	font-size: 1.125em;
-	max-width: 480px;
+	max-width: 30em;
 	text-align: center;
 	margin: auto;
 }
 
 .mainContent p:nth-child(2) {
-	margin-top: 10px;
+	margin-top: .625em;
 }
 
 .intro-copy span {
@@ -108,13 +108,13 @@ header {
 /*Form Styling*/
 
 form {
-	width: 380px;
-	margin: 0 auto 100px auto;
+	width: 23.75em;
+	margin: 0 auto 6.25em auto;
 
 }
 
 form>button {
-	margin: 34px 120px 0 120px;
+	margin: 2.125em 7.5em 0 7.5em;
 }
 
 input[type="text"] {
@@ -136,7 +136,7 @@ input[type="text"]:focus {
 }
 
 #p-count {
-	margin: 0 120px 30px 25px;
+	margin: 0 7.5em 1.875em 1.5625em;
 }
 
 .checkbox {
@@ -144,7 +144,7 @@ input[type="text"]:focus {
 }
 
 .checkbox + label {
-  padding: 20px 19px 18px 19px;
+  padding: 1.25em 1.1875em 1.125em 1.1875em;
   background: url(../images/unchecked.png) no-repeat left center;
 }
 
@@ -153,57 +153,57 @@ input[type="text"]:focus {
 }
 
 #generator label:nth-of-type(2){
-	margin-left: 35px;
+	margin-left: 2.1875em;
 }
 
 #generator label:nth-of-type(3) {
-margin-left: 96px;
+margin-left: 6em;
 }
 
 #generator p {
 	font-weight: 200;
 	font-size: 1em;
 	text-align: left;
-	margin-bottom: 30px;
+	margin-bottom: 1.875em;
 	display: inline-block;
 }
 
 /*Footer Styling*/
 
 footer {
-	padding-top: 5px;
+	padding-top: .3125em;
 }
 
 #footer-border>div {
 	width: 33%;
 	float: left;
-	min-height: 127px;
+	min-height: 7.9375em;
 }
 
 #footer-border>div:nth-child(3) p {
 	text-align: center;
-	max-width: 374px;
+	max-width: 26.71em;
 	float: right;
-	margin-right: 30px;
+	margin-right: 2.14em;
 	margin-left: auto;
 }
 
 .footertext p {
 	font-size: 0.875em;
 	color: #fff6e5;
-	margin-bottom: 30px;
-	margin-left: 30px;
+	margin-bottom: 2.14em;
+	margin-left: 2.14em;
 }
 
 #socialLinks a img {
-	height: 65px;
-	width: 65px;
-	margin: 0 11px 0 11px;
+	height: 4.06em;
+	width: 4.06em;
+	margin: 0 .68em 0 .68em;
 }
 
 #socialLinks p {
 	font-family: "lobster", "Gill Sans", "futura-pt", sans-serif; /*Can't get Lobster working*/
-	font-size: 1.500em;
+	font-size: 1.5em;
 	color: #ff7f66;
 	font-weight: 400;
 }
@@ -213,22 +213,22 @@ footer {
 }
 
 #socialLinks div {
-	margin-top: 25px;
+	margin-top: 1.56em;
 }
 
 #footer-border>div:nth-child(1) p:first-of-type {
-	margin-top: 30px;
+	margin-top: 1.875em;
 }
 
 #footer-border>div:nth-child(3) p:first-of-type {
-	margin: 35px 70px 30px 43px; 
+	margin: 2.18em 4.375em 1.875em 2.6875em; 
 }
 
 #share-button {
 	display: block;
-	width: 75px;
-	height: 26px;
-	margin: 25px auto 0 auto;
+	width: 4.687em;
+	height: 1.625em;
+	margin: 1.562em auto 0 auto;
 }
 
 #footer-border {
@@ -243,19 +243,19 @@ footer {
 	margin: 90px auto 64px auto;
 	font-weight: 400;
 	font-size: 1.125em;
-	max-width: 480px;
+	max-width: 50%;
 	text-align: center;
 }
 
 .startup-ipsum p {
 	font-weight: 200;
 	font-size: 1em;
-	margin-bottom: 30px;
+	margin-bottom: 1.875em;
 	max-width: 50%;
 }
 
 .startup-ipsum p:last-of-type, .startup-ipsum code:last-of-type {
-	margin-bottom: 90px;
+	margin-bottom: 5.625em;
 }
 
 .startup-ipsum code {
@@ -274,7 +274,7 @@ footer {
 	height: 7.813em;
 	width: 7.813em;
 	display: block;
-	margin: 0 auto;
+	margin: 0 auto 1.5em auto;
 }
 
 .creator-profile h2, .creator-profile p  {
@@ -286,6 +286,7 @@ footer {
 	font-weight: 300;
 	font-size: 1em;
 	max-width: 8.4375em;
+	margin: 0 auto 0.75em auto;
 }
 
 .creator-profile a, .creator-profile span {
@@ -295,10 +296,12 @@ footer {
 .creator-profile {
 	width: 10em;
 	float: left;
+	margin: 1em; 
 }
 
 #creator-container {
 	margin: 14.375em auto 14.375em auto;
+	width: 60%;
 }
 
 
