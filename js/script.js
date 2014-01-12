@@ -6,5 +6,5 @@ jQuery(document).ready(function() {
 	generator.init();
 });
 
-// TODO: Rotate header images
+// TODO: Set max number of paragraphs
 // TODO: Google Analytics
