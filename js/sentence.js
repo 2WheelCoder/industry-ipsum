@@ -1,8 +1,8 @@
-var Sentence = function(terms) {
+function Sentence(terms) {
 	this.terms = terms;
 	this.termCount = this.generateRandomNumber(7, 14);
 	this.content = this.create();
-};
+}
 
 Sentence.prototype = {
 	create: function() {
