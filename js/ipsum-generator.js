@@ -1,18 +1,17 @@
-var Generator = function(startupJSONURL) {
-	this.latinLibrary = new TermLibrary('js/lorem-ipsum.json').terms;
-	this.startupLibrary = new TermLibrary(startupJSONURL).terms;
-	this.terms = this.startupLibrary;
-	
-	this.options = {
+var ipsumGenerator = {
+	latinLibrary: new TermLibrary('js/lorem-ipsum.json').terms,
+	startupLibrary: new TermLibrary('js/startup-ipsum.json').terms,
+	terms: this.startupLibrary,
+	options: {
 		paragraphCount: 5,
 		pTags: false
-	};
-};
+	},
 
-Generator.prototype = {
 	setUserOptions: function() {
 		var pCount = $('#p-count').val();
-		if ( pCount !== '' ) {
+		if ( pCount > 99 ) {
+			this.options.paragraphCount = 99;
+		} else if ( pCount !== '' ) {
 			this.options.paragraphCount = pCount;
 		}
 
@@ -24,27 +23,25 @@ Generator.prototype = {
 
 		if ( $('#p-tags:checkbox:checked').val() !== undefined ) {
 			this.options.pTags = true;
+		} else {
+			this.options.pTags = false;
 		}
 	},
 
 	generate: function() {
-		var content = '';
-
-		if ( this.options.pTags ) {
-			content += '<pre><code>';
-		}
+		var content = '<h2>Crushing it.</h2>';
 
 		for (var x = 0; x < this.options.paragraphCount; x++) {
+			if ( this.options.pTags ) content += '<code>';
+
 			content += this.options.pTags ? '&lt;p&gt;' : '<p>';
 
 			var paragraph = new Paragraph(this.terms);
 			content += paragraph.content;
 
 			content += this.options.pTags ? '&lt;/p&gt;' : '</p>';
-		}
 
-		if ( this.options.pTags ) {
-			content += '</pre></code>';
+			if ( this.options.pTags ) content += '</code>';
 		}
 
 		return content;
