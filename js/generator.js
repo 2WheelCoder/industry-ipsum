@@ -1,15 +1,12 @@
-var Generator = function(startupJSONURL) {
-	this.latinLibrary = new TermLibrary('js/lorem-ipsum.json').terms;
-	this.startupLibrary = new TermLibrary(startupJSONURL).terms;
-	this.terms = this.startupLibrary;
-	
-	this.options = {
+var generator = {
+	latinLibrary: new TermLibrary('js/lorem-ipsum.json').terms,
+	startupLibrary: new TermLibrary('js/startup-ipsum.json').terms,
+	terms: this.startupLibrary,
+	options: {
 		paragraphCount: 5,
 		pTags: false
-	};
-};
+	},
 
-Generator.prototype = {
 	setUserOptions: function() {
 		var pCount = $('#p-count').val();
 		if ( pCount !== '' ) this.options.paragraphCount = pCount;
