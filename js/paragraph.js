@@ -1,8 +1,8 @@
-var Paragraph = function(terms) {
+function Paragraph(terms) {
 	this.terms = terms;
 	this.sentenceCount = this.generateRandomNumber(3, 5);
 	this.content = this.create();
-};
+}
 
 Paragraph.prototype = {
 	create: function() {

@@ -1,7 +1,7 @@
-var TermLibrary = function(jsonURL) {
+function TermLibrary(jsonURL) {
 	this.jsonURL = jsonURL;
 	this.terms = this.getTerms();
-};
+}
 
 TermLibrary.prototype = {
 	getTerms: function() {
