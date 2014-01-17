@@ -17,9 +17,7 @@ Sentence.prototype = {
 		return content;
 	},
 
-	generateRandomNumber: function(min, max) {
-		return Math.round(Math.random() * (max - min) + min);
-	},
+	generateRandomNumber: Paragraph.prototype.generateRandomNumber,
 
 	capitalize: function(term) {
 		return term.charAt(0).toUpperCase() + term.slice(1);
