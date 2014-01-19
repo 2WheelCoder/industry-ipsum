@@ -21,3 +21,5 @@ Paragraph.prototype = {
 		return Math.round(Math.random() * (max - min) + min);
 	}
 };
+
+// Paragraph.prototype.create = function () {} ;
