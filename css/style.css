@@ -261,6 +261,10 @@ footer {
 	display: none; 
 }
 
+#socialLinks div a {
+	display: inline-block;
+}
+
 /*---Ipsum Styling---*/
 
 .startup-ipsum h2 {
@@ -339,6 +343,10 @@ footer {
 @media (max-width: 960px) {
 
 /*Footer*/	
+
+	.startup-ipsum p {
+		max-width: 80%;
+	}
 
 	footer {
 		padding-top: 0;
@@ -427,6 +435,7 @@ footer {
 
 	#logoContainer {
 		width: 100%;
+		margin-bottom: 0;
 	}
 
 	#logoText {
@@ -482,8 +491,15 @@ footer {
 		margin: .3125em 0 .3125em 0;
 		padding: 2.5em 1.5em;
 	}
-}
+	.creator-profile {
+		width: 100%;
+	}
 
+	#creator-container {
+		margin: 6.25em auto;
+	}
+}
+	
 /*@media only screen and (min-device-width : 321px) {
 
 	#footer-border>div:nth-child(2) {

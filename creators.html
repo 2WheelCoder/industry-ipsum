@@ -1,14 +1,24 @@
 <!doctype html>
 <html>
 	<head>
-	<meta charset="utf-8"/>
+		<meta charset="utf-8"/>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/javascript" src="//use.typekit.net/ket0lvu.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 		<title>Creators | SI</title>
 		<link rel="stylesheet" href="css/style.css"/>
-		<meta charset="utf-8"/>
+
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-47452422-1', 'startupipsum.io');
+		  ga('send', 'pageview');
+		</script>
+
 	</head>
 	
 	<body>
@@ -29,11 +39,11 @@
 				<img src="images/adam-headshot.png" alt="Adam's picture" class="creator-headshot">
 				<h2>Adam Noffsinger Designer/Developer</h2>
 				<p>
-					<a href="">LinkedIn</a>
+					<a href="www.linkedin.com/pub/adam-noffsinger/1a/5b6/46b/">LinkedIn</a>
 					<span>|</span>
-					<a href="">Twitter</a>
+					<a href="https://twitter.com/anoffsinger">Twitter</a>
 					<span>|</span>
-					<a href="">Github</a>
+					<a href="https://github.com/anoffsinger">Github</a>
 				</p>
 			</div>
 
@@ -41,11 +51,11 @@
 				<img src="images/nick-headshot.png" alt="Nick's headshot" class="creator-headshot">
 				<h2>Nick Stevens Developer</h2>
 				<p>
-					<a href="">LinkedIn</a>
+					<a href="http://www.linkedin.com/in/nicholasstevens/">LinkedIn</a>
 					<span>|</span>
-					<a href="">Twitter</a>
+					<a href="http://twitter.com/nicholasstevens">Twitter</a>
 					<span>|</span>
-					<a href="">Github</a>
+					<a href="https://github.com/IbanezJem7vSBL">Github</a>
 				</p>
 			</div>
 
@@ -53,11 +63,11 @@
 				<img src="images/tony-headshot.png" alt="Tony's headshot" class="creator-headshot">
 				<h2>Tony Oberto Developer</h2>
 				<p>
-					<a href="">LinkedIn</a>
+					<a href="http://www.linkedin.com/pub/anthony-oberto/41/139/b09">LinkedIn</a>
 					<span>|</span>
-					<a href="">Twitter</a>
+					<a href="https://twitter.com/AnthonyOberto">Twitter</a>
 					<span>|</span>
-					<a href="">Github</a>
+					<a href="https://github.com/anthonyoberto">Github</a>
 				</p>
 			</div>
 
@@ -65,30 +75,38 @@
 				<img src="images/jamie-headshot.png" alt="Jamie's headshot" class="creator-headshot">
 				<h2>Jamie Emerson Project Manager</h2>
 				<p>
-					<a href="">LinkedIn</a>
+					<a href="http://www.linkedin.com/in/jamieiemerson">LinkedIn</a>
 					<span>|</span>
-					<a href="">Twitter</a>
+					<a href="https://twitter.com/inghamemerson">Twitter</a>
 					<span>|</span>
-					<a href="">Github</a>
+					<a href="https://github.com/inghamemerson">Github</a>
 				</p>
 			</div>
 		</div>
 		
 		<footer class="clearfix">
 			<div id="footer-border">
-				<div class="footertext">
-					<p>Acquire <a href="creators.html">the creators</a> before they get scooped up</p>
-					<p><a href="#">Email us</a> for an invite.</p>
-					<p><a href="#">Invest</a> in us (by donating beer money).</p>
-				</div>
-
+				
 				<div id="socialLinks">
 					<img id="share-button" src="images/share.png" >
 					<div>
-						<a href="#"><img src="images/facebook.png" alt="Share to Facebook"></a>
-						<a href="#"><img src="images/twitter.png" alt="Share to Twitter"></a>
-						<a href="#"><img src="images/googleplus.png" alt="Share to Google Plus"></a>
+						<a href="#">
+							<img src="images/facebook.png" alt="Share to Facebook">
+						</a>
+						<a href="http://twitter.com/home?status=The greatest startup of 2013?">
+							<img src="images/twitter.png" alt="Share to Twitter">
+						</a>
+						<a href="#">
+							<img src="images/googleplus.png" alt="Share to Google Plus">
+						</a>
 					</div>
+				</div>
+
+				<div id="creators" class="footertext">
+					<img id="logo-badge-footer" src="images/badge-x2-0.png" alt="Iterate!">
+					<p>Acquire <a href="creators.html">the creators</a> before they get scooped up.</p>
+					<p><a href="#">Email us</a> for an invite.</p>
+					<p><a href="#">Invest</a> in us (by donating beer money).</p>
 				</div>
 
 				<div class="footertext">
@@ -99,10 +117,11 @@
 		</footer>
 
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="js/vendor/breakpoints.js"></script>
 		<script src="js/term-library.js"></script>
-		<script src="js/sentence.js"></script>
 		<script src="js/paragraph.js"></script>
-		<script src="js/generator.js"></script>
-		<script src="js/lorem-ipsum-generator.js"></script>
+		<script src="js/sentence.js"></script>
+		<script src="js/ipsum-generator.js"></script>
+		<script src="js/script.js"></script>
 	</body>
 </html>
