@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
 		$creators = $('#creators'),
 		$socialLinks = $('#socialLinks');
 
-	ipsumGenerator.init();
+	// ipsumGenerator.init();
 
 	$window.setBreakpoints({
 		distinct: true,
@@ -16,12 +16,10 @@ jQuery(document).ready(function() {
 	});     
 
 	$window.bind('enterBreakpoint960', function() {
-		console.log('enter');
 		$creators.insertBefore($socialLinks);
 	});
 
 	$window.bind('exitBreakpoint960', function() {
-		console.log('exit');
 		$creators.insertAfter($socialLinks);
 	});
 });
