@@ -1,9 +1,11 @@
 (function() {
 
 	window.IpsumGenerator = {
+		
 		Models: {},
 		Collections: {},
 		Views: {},
+
 		getRandomNumber: function(min, max) {
 			return Math.round(Math.random() * (max - min) + min);
 		}
