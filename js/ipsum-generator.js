@@ -158,7 +158,7 @@
 
 		renderHeaderIcon: function() {
 			var imgNum = IpsumGenerator.getRandomNumber(0, 1),
-				url = 'images/badge-x2-' + imgNum + '.png';
+				url = 'images/badge-' + imgNum + '.png';
 			$('#logoBadge').attr('src', url);
 		},
 
