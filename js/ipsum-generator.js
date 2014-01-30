@@ -83,6 +83,7 @@
 		initialize: function() {
 			this.termsModel = new IpsumGenerator.Models.Terms();
 			this.renderHeaderIcon();
+			this.bindBreakpoints();
 		},
 
 		events: {
@@ -90,6 +91,27 @@
 			'change #p-count': 'updatePCount',
 			'change #p-tags': 'togglePTags',
 			'change #latin': 'toggleLatin'
+		},
+
+		bindBreakpoints: function() {
+			var $window = $(window),
+				$creators = $('#creators'),
+				$socialLinks = $('#socialLinks');
+
+			$window.setBreakpoints({
+				distinct: true,
+				breakpoints: [
+					960
+				] 
+			});     
+
+			$window.bind('enterBreakpoint960', function() {
+				$creators.insertBefore($socialLinks);
+			});
+
+			$window.bind('exitBreakpoint960', function() {
+				$creators.insertAfter($socialLinks);
+			});
 		},
 
 		generate: function() {
