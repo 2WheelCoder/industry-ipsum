@@ -1,0 +1,21 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+	Adam Noffsinger -- Design and HTML/CSS Developer
+	Tony Oberto -- Developer
+	Jamie Emerson -- Project Management
+    Nick Stevens -- JavaScript Develoepr -- @NicholasStevens
+
+# THANKS
+
+	BDW
+	Richard Jones -- http://talentedmrjones.com/
+
+# TECHNOLOGY COLOPHON
+
+    HTML5, CSS3
+    jQuery
+    breakpoints.js
+    Grunt

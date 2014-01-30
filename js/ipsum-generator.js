@@ -1,70 +1,181 @@
-var ipsumGenerator = {
-	latinLibrary: new TermLibrary('js/lorem-ipsum.json').terms,
-	startupLibrary: new TermLibrary('js/startup-ipsum.json').terms,
-	terms: this.startupLibrary,
-	options: {
-		paragraphCount: 5,
-		pTags: false
-	},
+(function() {
 
-	setUserOptions: function() {
-		var pCount = $('#p-count').val();
-		if ( pCount > 99 ) {
-			this.options.paragraphCount = 99;
-		} else if ( pCount !== '' ) {
-			this.options.paragraphCount = pCount;
+	window.IpsumGenerator = {
+		
+		Models: {},
+		Collections: {},
+		Views: {},
+
+		getRandomNumber: function(min, max) {
+			return Math.round(Math.random() * (max - min) + min);
 		}
+	};
 
-		if ( $('#latin:checkbox:checked').val() !== undefined ) {
-			this.terms = this.startupLibrary.concat(this.latinLibrary);
-		} else {
-			this.terms = this.startupLibrary;
-		}
+	IpsumGenerator.Models.Terms = Backbone.Model.extend({
 
-		if ( $('#p-tags:checkbox:checked').val() !== undefined ) {
-			this.options.pTags = true;
-		} else {
-			this.options.pTags = false;
-		}
-	},
+		initialize: function() {
+			this.startupTerms = this.getTerms('js/startup-terms.json');
+			this.ipsumTerms = this.getTerms('js/ipsum-terms.json');
+			this.terms = this.startupTerms;
+			this.latin = false;
+		},
 
-	generate: function() {
-		var content = '<h2>Crushing it.</h2>';
+		capitalize: function(term) {
+			return term.charAt(0).toUpperCase() + term.slice(1);
+		},
 
-		for (var x = 0; x < this.options.paragraphCount; x++) {
-			if ( this.options.pTags ) content += '<code>';
+		getTerms: function(url) {
+			var terms = [];
 
-			content += this.options.pTags ? '&lt;p&gt;' : '<p>';
-
-			var paragraph = new Paragraph(this.terms);
-			content += paragraph.content;
-
-			content += this.options.pTags ? '&lt;/p&gt;' : '</p>';
-
-			if ( this.options.pTags ) content += '</code>';
-		}
-
-		return content;
-	},
-
-	init: function() {
-		var that = this,
-			$generator = $('#generator');
-
-		$generator.submit(function(evt) {
-			evt.preventDefault();
-
-			that.setUserOptions();
-
-			var startupIpsumContent = that.generate();
-
-			$('.intro-copy').fadeOut(function() {
-				if( $('.startup-ipsum').length === 0 ) {
-					$('.mainContent').prepend('<div class="startup-ipsum"></div>');
-					$generator.children('button').html('Iterate!');
+			$.ajax({
+				type: 'GET',
+				async: false,
+				url: url,
+				success: function(data) {
+					terms = data.terms;
 				}
-				$('.startup-ipsum').html(startupIpsumContent);
 			});
-		});
-	}
-};
+
+			return terms;
+		},
+
+		toggleLatin: function() {
+			if (this.latin) {
+				this.terms = this.startupTerms;
+			} else {
+				this.terms = this.startupTerms.concat(this.ipsumTerms);
+			}
+			this.latin = !this.latin;
+		},
+
+		getSentence: function() {
+			var sentence = '',
+				wordCount = IpsumGenerator.getRandomNumber(7, 14);
+
+			for (var x = 0; x < wordCount; x++) {
+				term = this.terms[IpsumGenerator.getRandomNumber(0, this.terms.length - 1 )];
+				sentence += x === 0 ? this.capitalize(term) : term;
+				sentence += x !== this.termCount-1 ? ' ' : '.';
+			}
+
+			return sentence;
+		},
+
+		getParagraph: function() {
+			var p = '',
+				sentenceCount = IpsumGenerator.getRandomNumber(3, 5);
+
+			for (var x = 0; x < sentenceCount; x++) {
+				var sentence = this.getSentence();
+				p += sentence;
+				if ( x !== sentenceCount-1 ) p += ' ';
+			}
+
+			return p;
+		}
+	});
+
+	IpsumGenerator.Views.IpsumText = Backbone.View.extend({
+		
+		latin: false,
+		pTags: false,
+		pCount: 5,
+		content: '',
+		el: 'body',
+
+		initialize: function() {
+			this.termsModel = new IpsumGenerator.Models.Terms();
+			this.renderHeaderIcon();
+			this.bindBreakpoints();
+		},
+
+		events: {
+			'submit form': 'render',
+			'change #p-count': 'updatePCount',
+			'change #p-tags': 'togglePTags',
+			'change #latin': 'toggleLatin'
+		},
+
+		bindBreakpoints: function() {
+			var $window = $(window),
+				$creators = $('#creators'),
+				$socialLinks = $('#socialLinks');
+
+			$window.setBreakpoints({
+				distinct: true,
+				breakpoints: [
+					960
+				] 
+			});     
+
+			$window.bind('enterBreakpoint960', function() {
+				$creators.insertBefore($socialLinks);
+			});
+
+			$window.bind('exitBreakpoint960', function() {
+				$creators.insertAfter($socialLinks);
+			});
+		},
+
+		generate: function() {
+			var ipsum = '';
+
+			for(var x = 0; x < this.pCount; x++) {
+				if (this.pTags) {
+					ipsum += '<code>&lt;p&gt;';
+				} else {
+					ipsum += '<p>';
+				}
+
+				ipsum += this.termsModel.getParagraph();
+
+				if (this.pTags) {
+					ipsum += '&lt;/p&gt;</code>';
+				} else {
+					ipsum += '</p>';
+				}
+			}
+
+			return ipsum;
+		},
+
+		render: function(evt) {
+			evt.preventDefault();
+			
+			var content = this.generate(),
+				that = this;
+
+			this.$el.find('.intro-copy').fadeOut(function() {
+				if ( that.$el.find('.startup-ipsum').length === 0 ) {
+					that.$el.children('.mainContent').prepend('<div class="startup-ipsum"></div>');
+					that.$el.find('button').html('Iterate!');
+				}
+				$('.startup-ipsum').html(content);
+			});
+
+			return this;
+		},
+
+		renderHeaderIcon: function() {
+			var imgNum = IpsumGenerator.getRandomNumber(0, 1),
+				url = 'images/badge-x2-' + imgNum + '.png';
+			$('#logoBadge').attr('src', url);
+		},
+
+		toggleLatin: function() {
+			this.termsModel.toggleLatin();
+			this.latin = !this.latin;
+		},
+
+		togglePTags: function() {
+			this.pTags = !this.pTags;
+		},
+
+		updatePCount: function() {
+			this.pCount = this.$el.find('#p-count').val();
+		}
+	});
+
+	var ipsumTextView = new IpsumGenerator.Views.IpsumText();
+
+})();
