@@ -94,7 +94,7 @@
 			'change #p-count': 'updatePCount',
 			'change #p-tags': 'togglePTags',
 			'change #latin': 'toggleLatin',
-			'click #twitter-share' : 'shareOnTwitter'
+			'click #socialLinks a' : 'share'
 		},
 
 		bindBreakpoints: function() {
@@ -163,9 +163,11 @@
 			$('#logoBadge').attr('src', url);
 		},
 
-		shareOnTwitter: function(evt) {
+		share: function(evt) {
 			evt.preventDefault();
-			var newWindow = window.open('http://twitter.com/home?status','name','height=440,width=540');
+
+			var url = evt.currentTarget.href;
+			var newWindow = window.open(url,'name','height=440,width=540');
 			if (window.focus) newWindow.focus();
 		},
 
