@@ -74,6 +74,7 @@
 	});
 
 	IpsumGenerator.Views.IpsumText = Backbone.View.extend({
+		
 		latin: false,
 		pTags: false,
 		pCount: 5,
