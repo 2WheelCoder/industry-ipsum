@@ -157,7 +157,7 @@
 		},
 
 		renderHeaderIcon: function() {
-			var imgNum = IpsumGenerator.getRandomNumber(1, 2),
+			var imgNum = IpsumGenerator.getRandomNumber(1, 4),
 				url = 'images/badge-' + imgNum + '.png';
 			$('#logoBadge').attr('src', url);
 		},
