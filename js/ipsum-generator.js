@@ -93,7 +93,8 @@
 			'submit form': 'render',
 			'change #p-count': 'updatePCount',
 			'change #p-tags': 'togglePTags',
-			'change #latin': 'toggleLatin'
+			'change #latin': 'toggleLatin',
+			'click #socialLinks a' : 'share'
 		},
 
 		bindBreakpoints: function() {
@@ -160,6 +161,14 @@
 			var imgNum = IpsumGenerator.getRandomNumber(1, 4),
 				url = 'images/badge-' + imgNum + '.png';
 			$('#logoBadge').attr('src', url);
+		},
+
+		share: function(evt) {
+			evt.preventDefault();
+
+			var url = evt.currentTarget.href;
+			var newWindow = window.open(url,'name','height=440,width=540');
+			if (window.focus) newWindow.focus();
 		},
 
 		toggleLatin: function() {
