@@ -93,7 +93,8 @@
 			'submit form': 'render',
 			'change #p-count': 'updatePCount',
 			'change #p-tags': 'togglePTags',
-			'change #latin': 'toggleLatin'
+			'change #latin': 'toggleLatin',
+			'click #twitter-share' : 'shareOnTwitter'
 		},
 
 		bindBreakpoints: function() {
@@ -160,6 +161,12 @@
 			var imgNum = IpsumGenerator.getRandomNumber(1, 2),
 				url = 'images/badge-' + imgNum + '.png';
 			$('#logoBadge').attr('src', url);
+		},
+
+		shareOnTwitter: function(evt) {
+			evt.preventDefault();
+			var newWindow = window.open('http://twitter.com/home?status','name','height=440,width=540');
+			if (window.focus) newWindow.focus();
 		},
 
 		toggleLatin: function() {
