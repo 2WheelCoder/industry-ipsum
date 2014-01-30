@@ -1,6 +1,3 @@
-var numRand = Math.floor(Math.random()*(1 - 0 + 1)) + 0;
-document.getElementById("logoBadge").src = "images/badge-x2-"+numRand+".png";
-
 jQuery(document).ready(function() {
 	var $window = $(window),
 		$creators = $('#creators'),
@@ -23,5 +20,3 @@ jQuery(document).ready(function() {
 		$creators.insertAfter($socialLinks);
 	});
 });
-
-// TODO: Google Analytics
