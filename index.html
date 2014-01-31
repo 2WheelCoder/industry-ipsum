@@ -46,7 +46,7 @@
 				<input type="checkbox" id="p-tags" class="checkbox">
 				<label for="p-tags"></label>
 				
-				<button type="submit">Generate</button>	
+				<button type="submit" onClick="_gaq.push(['_trackEvent', 'generate', 'iterations']);">Generate</button>	
 			</form>
 		</div>
 
@@ -56,23 +56,23 @@
 				<div id="socialLinks">
 					<img id="share-button" src="images/share.png" >
 					<div>
-						<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fstartupipsum.io" target="_blank">
+						<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fstartupipsum.io" onClick="_gaq.push(['_trackEvent', 'Share', 'click', 'facebook']);" target="_blank">
 							<img src="images/facebook.png" alt="Share to Facebook">
 						</a>
-						<a href="http://twitter.com/home?status=Work%20at%20a%20%23startup%20and%20have%20no%20time%20to%20write%20copy?%20Use%20http%3A%2F%2Fstartupipsum.io%20to%20generate%20a%20slew%20of%20%23tech%20jargon%20to%20fill%20your%20designs." target="_blank">
+						<a href="http://twitter.com/home?status=Work%20at%20a%20%23startup%20and%20have%20no%20time%20to%20write%20copy?%20Use%20http%3A%2F%2Fstartupipsum.io%20to%20generate%20a%20slew%20of%20%23tech%20jargon%20to%20fill%20your%20designs." onClick="_gaq.push(['_trackEvent', 'Share', 'click', 'twitter']);" target="_blank">
 							<img src="images/twitter.png" alt="Share to Twitter">
 						</a>
-						<a href="https://plus.google.com/share?url=http://startupipsum.io">
-							<img src="images/googleplus.png" alt="Share to Google Plus" target="_blank">
+						<a href="https://plus.google.com/share?url=http://startupipsum.io" onClick="_gaq.push(['_trackEvent', 'Share', 'click', 'googlePlus']);" target="_blank">
+							<img src="images/googleplus.png" alt="Share to Google Plus">
 						</a>
 					</div>
 				</div>
 
 				<div id="creators" class="footertext">
 					<img id="logo-badge-footer" src="images/badge-2.png" alt="Iterate!">
-					<p>Acquire <a href="creators.html">the creators</a> before they get scooped up.</p>
-					<p><a href="mailto:startupipsum@gmail.com?Subject=Wanted: Startup Unicorns." target="_blank">Email us</a> for the pitch deck.</p>
-					<p><a href="mailto:startupipsum@gmail.com?CC=cash@square.com&Subject=$5.00&Body=I love Startup Ipsum, thanks! Have a beer on me." target="_blank">Invest</a> in us (by donating beer money).</p>
+					<p>Acquire <a href="creators.html" onClick="_gaq.push(['_trackEvent', 'footer', 'click', 'creators']);">the creators</a> before they get scooped up.</p>
+					<p><a href="mailto:startupipsum@gmail.com?Subject=Wanted: Startup Unicorns." onClick="_gaq.push(['_trackEvent', 'footer', 'click', 'email']);" target="_blank">Email us</a> for the pitch deck.</p>
+					<p><a href="mailto:startupipsum@gmail.com?CC=cash@square.com&Subject=$5.00&Body=I love Startup Ipsum, thanks! Have a beer on me." onClick="_gaq.push(['_trackEvent', 'footer', 'click', 'investWithBeer']);" target="_blank">Invest</a> in us (by donating beer money).</p>
 				</div>
 
 				<div class="footertext">
