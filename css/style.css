@@ -1,4 +1,4 @@
-/*---Global Styling---*/
+/*---Global styling---*/
 
 * {
 	margin: 0;
@@ -56,7 +56,7 @@ button[type="submit"]:hover {
 
 /*---Content Styling---*/
 
-/*Header Styling*/
+/*Header styling*/
 
 header {
 	padding: 0.313em 0;
@@ -85,7 +85,7 @@ header {
 	border-bottom: 1px solid #fff6e5;  
 }
 
-/*Intro Styling*/
+/*Intro content styling*/
 
 .intro-copy {
 	margin: 5.625em auto 4em auto;
@@ -111,7 +111,7 @@ header {
 	font-style: italic;
 }
 
-/*Form Styling*/
+/*Input form styling*/
 
 form {
 	width: 22em;
@@ -149,7 +149,6 @@ input[type="text"]:focus {
 
 #generator label:nth-of-type(2) {
 	float: right;
-
 }
 
 #generator label:nth-of-type(3) {
@@ -185,10 +184,9 @@ input[type="text"]:focus {
 	text-align: left;
 	margin-bottom: 1.875em;
 	display: inline-block;
-
 }
 
-/*Footer Styling*/
+/*Footer styling*/
 
 footer {
 	padding-top: .3125em;
@@ -241,7 +239,7 @@ footer {
 }
 
 #footer-border>div:nth-child(3) p:first-of-type {
-	margin: 2.18em 4.375em 1.875em 2.6875em; 
+	margin: 2.18em 5.1em 1.875em 2.6875em; 
 }
 
 #share-button {
@@ -265,7 +263,11 @@ footer {
 	display: inline-block;
 }
 
-/*---Ipsum Styling---*/
+/*---Ipsum output styling---*/
+
+.startup-ipsum {
+	margin-top: 6.25em;
+}
 
 .startup-ipsum h2 {
 	margin: 90px auto 64px auto;
@@ -300,7 +302,7 @@ footer {
 	display: none;
 }
 
-/*---Creator Styling---*/
+/*---Creators page styling---*/
 
 .creator-headshot {
 	height: 7.813em;
@@ -338,11 +340,9 @@ footer {
 	width: 70%;
 } 
 
-/*Tablets portrait/landscape, medium browser resize*/
+/*Tablets portrait/landscape and medium browser resize*/
 
 @media (max-width: 960px) {
-
-/*Footer*/	
 
 	.startup-ipsum p {
 		max-width: 80%;
@@ -393,7 +393,6 @@ footer {
 		text-align: center;
 		display: block;
 	}
-
 }
 
 /*Small browser resize*/
@@ -418,8 +417,7 @@ footer {
 	}
 }
 
-
-/*Phone portrait*/
+/*Phone portrait resize*/
 
 @media only screen and (max-device-width : 320px) and (orientation: portrait) {
 	
@@ -499,18 +497,6 @@ footer {
 		margin: 6.25em auto;
 	}
 }
-	
-/*@media only screen and (min-device-width : 321px) {
-
-	#footer-border>div:nth-child(2) {
-		padding: 2.5em;
-	}
-
-	#footer-border>div:nth-child(3) {
-		padding: 4.5em 1.5em;
-	}
-}
-*/
 
 
 
