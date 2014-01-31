@@ -14,10 +14,15 @@
 	IpsumGenerator.Models.Terms = Backbone.Model.extend({
 
 		initialize: function() {
-			this.startupTerms = this.getTerms('js/startup-terms.json');
-			this.ipsumTerms = this.getTerms('js/ipsum-terms.json');
-			this.terms = this.startupTerms;
 			this.latin = false;
+
+			var that = this;
+
+			$.when( this.getTerms('js/startup-terms.json'), this.getTerms('js/ipsum-terms.json') ).done(function(startup, ipsum) {
+				that.startupTerms = startup[0].terms;
+				that.ipsumTerms = ipsum[0].terms;
+				that.terms = that.startupTerms;
+			});
 		},
 
 		capitalize: function(term) {
@@ -25,18 +30,10 @@
 		},
 
 		getTerms: function(url) {
-			var terms = [];
-
-			$.ajax({
+			return $.ajax({
 				type: 'GET',
-				async: false,
-				url: url,
-				success: function(data) {
-					terms = data.terms;
-				}
+				url: url
 			});
-
-			return terms;
 		},
 
 		toggleLatin: function() {
