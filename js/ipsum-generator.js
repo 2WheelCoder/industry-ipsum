@@ -74,11 +74,11 @@
 
 	IpsumGenerator.Views.IpsumText = Backbone.View.extend({
 		
-		latin: false,
-		pTags: false,
-		pCount: 5,
 		content: '',
 		el: 'body',
+		latin: false,
+		pCount: 5,
+		pTags: false,
 
 		initialize: function() {
 			this.model = new IpsumGenerator.Models.Terms();
