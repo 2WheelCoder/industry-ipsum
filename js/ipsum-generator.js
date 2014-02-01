@@ -82,13 +82,12 @@
 		latin: false,
 		pCount: 5,
 		pTags: false,
-		paragraphTemplate: template('paragraphTemplate'),
-		paragraphWithTagsTemplate: template('paragraphWithTagsTemplate'),
 
 		initialize: function() {
 			this.model = new IpsumGenerator.Models.Terms();
 			this.renderHeaderIcon();
 			this.bindBreakpoints();
+			this.getTemplates();
 		},
 
 		events: {
@@ -128,6 +127,13 @@
 			}
 
 			return paragraphs;
+		},
+
+		getTemplates: function() {
+			if ( $('#generator').length > 0 ) {
+				this.paragraphTemplate = template('paragraphTemplate');
+				this.paragraphWithTagsTemplate = template('paragraphWithTagsTemplate');
+			}
 		},
 
 		render: function(evt) {
