@@ -18,9 +18,9 @@
 
 			var that = this;
 
-			$.when( this.getTerms('js/startup-terms.json'), this.getTerms('js/ipsum-terms.json') ).done(function(startup, ipsum) {
+			$.when( this.getTerms('js/startup-terms.json'), this.getTerms('js/latin-terms.json') ).done(function(startup, ipsum) {
 				that.startupTerms = startup[0].terms;
-				that.ipsumTerms = ipsum[0].terms;
+				that.latinTerms = ipsum[0].terms;
 				that.terms = that.startupTerms;
 			});
 		},
@@ -40,7 +40,7 @@
 			if (this.latin) {
 				this.terms = this.startupTerms;
 			} else {
-				this.terms = this.startupTerms.concat(this.ipsumTerms);
+				this.terms = this.startupTerms.concat(this.latinTerms);
 			}
 			this.latin = !this.latin;
 		},
@@ -52,7 +52,7 @@
 			for (var x = 0; x < wordCount; x++) {
 				term = this.terms[IpsumGenerator.getRandomNumber(0, this.terms.length - 1 )];
 				sentence += x === 0 ? this.capitalize(term) : term;
-				sentence += x !== this.termCount-1 ? ' ' : '.';
+				sentence += x !== wordCount-1 ? ' ' : '.';
 			}
 
 			return sentence;
@@ -81,7 +81,7 @@
 		el: 'body',
 
 		initialize: function() {
-			this.termsModel = new IpsumGenerator.Models.Terms();
+			this.model = new IpsumGenerator.Models.Terms();
 			this.renderHeaderIcon();
 			this.bindBreakpoints();
 		},
@@ -125,7 +125,7 @@
 					ipsum += '<p>';
 				}
 
-				ipsum += this.termsModel.getParagraph();
+				ipsum += this.model.getParagraph();
 
 				if (this.pTags) {
 					ipsum += '&lt;/p&gt;</code>';
@@ -169,7 +169,7 @@
 		},
 
 		toggleLatin: function() {
-			this.termsModel.toggleLatin();
+			this.model.toggleLatin();
 			this.latin = !this.latin;
 		},
 
