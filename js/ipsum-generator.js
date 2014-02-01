@@ -135,7 +135,6 @@
 			
 			var that = this,
 				$startupIpsum = this.$el.find('#startup-ipsum'),
-				$mainContent = this.$el.children('.mainContent'),
 				content = {
 					paragraphs: this.generateIpsum()
 				};
@@ -143,14 +142,12 @@
 			this.$el.find('.intro-copy').fadeOut(500, function() {
 				if ( $startupIpsum.length === 0 ) {
 					that.$el.find('button').html('Iterate!');
+					that.setupTemplate(content).find('#startup-ipsum').slideDown(800);
 				} else {
-					$startupIpsum.remove();
-				}
-
-				if (that.pTags) {
-					$mainContent.prepend( that.paragraphWithTagsTemplate(content) ).find('#startup-ipsum').slideDown(800);
-				} else {
-					$mainContent.prepend( that.paragraphTemplate(content) ).find('#startup-ipsum').slideDown(800);
+					$startupIpsum.slideUp(800, function() {
+						this.remove();
+						that.setupTemplate(content).find('#startup-ipsum').slideDown(800);
+					});
 				}
 			});
 
@@ -161,6 +158,16 @@
 			var imgNum = IpsumGenerator.getRandomNumber(1, 4),
 				url = 'images/badge-' + imgNum + '.png';
 			$('#logoBadge').attr('src', url);
+		},
+
+		setupTemplate: function(content) {
+			var $mainContent = this.$el.children('.mainContent');
+			
+			if (this.pTags) {
+				return $mainContent.prepend(this.paragraphWithTagsTemplate(content));
+			} else {
+				return $mainContent.prepend(this.paragraphTemplate(content));
+			}
 		},
 
 		share: function(evt) {
