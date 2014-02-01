@@ -120,7 +120,7 @@
 			});
 		},
 
-		generate: function() {
+		generateIpsum: function() {
 			var paragraphs = [];
 
 			for(var x = 0; x < this.pCount; x++) {
@@ -137,7 +137,7 @@
 				$startupIpsum = this.$el.find('#startup-ipsum'),
 				$mainContent = this.$el.children('.mainContent'),
 				content = {
-					paragraphs: this.generate()
+					paragraphs: this.generateIpsum()
 				};
 
 			this.$el.find('.intro-copy').fadeOut(500, function() {
