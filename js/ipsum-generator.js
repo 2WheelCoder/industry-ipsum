@@ -63,16 +63,16 @@
 		},
 
 		getParagraph: function() {
-			var p = '',
+			var paragraph = '',
 				sentenceCount = IpsumGenerator.getRandomNumber(3, 5);
 
 			for (var x = 0; x < sentenceCount; x++) {
 				var sentence = this.getSentence();
-				p += sentence;
-				if ( x !== sentenceCount-1 ) p += ' ';
+				paragraph += sentence;
+				if ( x !== sentenceCount-1 ) paragraph += ' ';
 			}
 
-			return p;
+			return paragraph;
 		}
 	});
 
