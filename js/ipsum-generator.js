@@ -1,5 +1,9 @@
 (function() {
 
+	window.template = function(id) {
+		return _.template( $('#' + id).html() );
+	};
+
 	window.IpsumGenerator = {
 		
 		Models: {},
@@ -74,13 +78,12 @@
 
 	IpsumGenerator.Views.IpsumText = Backbone.View.extend({
 		
-		content: '',
 		el: 'body',
 		latin: false,
 		pCount: 5,
 		pTags: false,
-		paragraphTemplate: _.template( $('#paragraphTemplate').html() ),
-		paragraphWithTagsTemplate: _.template( $('#paragraphWithTagsTemplate').html() ),
+		paragraphTemplate: template('paragraphTemplate'),
+		paragraphWithTagsTemplate: template('paragraphWithTagsTemplate'),
 
 		initialize: function() {
 			this.model = new IpsumGenerator.Models.Terms();
