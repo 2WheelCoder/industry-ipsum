@@ -79,6 +79,8 @@
 		latin: false,
 		pCount: 5,
 		pTags: false,
+		paragraphTemplate: _.template( $('#paragraphTemplate').html() ),
+		paragraphWithTagsTemplate: _.template( $('#paragraphWithTagsTemplate').html() ),
 
 		initialize: function() {
 			this.model = new IpsumGenerator.Models.Terms();
@@ -116,39 +118,37 @@
 		},
 
 		generate: function() {
-			var ipsum = '';
+			var paragraphs = [];
 
 			for(var x = 0; x < this.pCount; x++) {
-				if (this.pTags) {
-					ipsum += '<code>&lt;p&gt;';
-				} else {
-					ipsum += '<p>';
-				}
-
-				ipsum += this.model.getParagraph();
-
-				if (this.pTags) {
-					ipsum += '&lt;/p&gt;</code>';
-				} else {
-					ipsum += '</p>';
-				}
+				paragraphs.push(this.model.getParagraph());
 			}
 
-			return ipsum;
+			return paragraphs;
 		},
 
 		render: function(evt) {
 			evt.preventDefault();
 			
-			var content = this.generate(),
-				that = this;
+			var that = this,
+				$startupIpsum = this.$el.find('#startup-ipsum'),
+				$mainContent = this.$el.children('.mainContent'),
+				content = {
+					paragraphs: this.generate()
+				};
 
-			this.$el.find('.intro-copy').fadeOut(function() {
-				if ( that.$el.find('.startup-ipsum').length === 0 ) {
-					that.$el.children('.mainContent').prepend('<div class="startup-ipsum"></div>');
+			this.$el.find('.intro-copy').fadeOut(500, function() {
+				if ( $startupIpsum.length === 0 ) {
 					that.$el.find('button').html('Iterate!');
+				} else {
+					$startupIpsum.remove();
 				}
-				$('.startup-ipsum').html(content);
+
+				if (that.pTags) {
+					$mainContent.prepend( that.paragraphWithTagsTemplate(content) ).find('#startup-ipsum').slideDown(800);
+				} else {
+					$mainContent.prepend( that.paragraphTemplate(content) ).find('#startup-ipsum').slideDown(800);
+				}
 			});
 
 			return this;

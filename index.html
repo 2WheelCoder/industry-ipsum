@@ -82,6 +82,17 @@
 			</div>
 		</footer>
 
+		<script id="paragraphTemplate" type="text/template">
+			<div class="startup-ipsum" id="startup-ipsum">
+				<% _.each(paragraphs, function(content) { %> <p><%= content %></p> <% }); %>
+			</div>
+		</script>
+		<script id="paragraphWithTagsTemplate" type="text/template">
+			<div class="startup-ipsum" id="startup-ipsum">
+				<% _.each(paragraphs, function(content) { %> <code>&lt;p&gt;<%= content %>&lt;/p&gt;</code> <% }); %>
+			</div>
+		</script>
+
 		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
 		<script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.0/backbone-min.js"></script>

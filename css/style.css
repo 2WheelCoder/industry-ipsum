@@ -266,6 +266,7 @@ footer {
 /*---Ipsum output styling---*/
 
 .startup-ipsum {
+	display: none;
 	margin-top: 6.25em;
 }
 
@@ -497,8 +498,3 @@ footer {
 		margin: 6.25em auto;
 	}
 }
-
-
-
-
-
