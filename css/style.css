@@ -8,6 +8,10 @@
   	box-sizing: border-box;
 }
 
+html, body {
+	height: 100%
+}
+
 header, footer {
 	background-color: #3e454c;
 }
@@ -93,6 +97,17 @@ header {
 
 .mainContent {
 	padding: 1.5625em;
+	min-height: 100%;
+	margin-bottom: -170px;
+}
+
+.mainContent:after {
+	content: "";
+	display: block;
+}
+
+footer, .mainContent:after {
+	min-height: 170px;
 }
 
 .mainContent p {
@@ -394,6 +409,10 @@ footer {
 		text-align: center;
 		display: block;
 	}
+
+	.creator-profile {
+		width: 50%;
+	}
 }
 
 /*Small browser resize*/
@@ -415,6 +434,10 @@ footer {
 		float: none;
 		display: block;
 		margin: 0 auto; 
+	}
+
+	.creator-profile {
+		width: 100%;
 	}
 }
 
