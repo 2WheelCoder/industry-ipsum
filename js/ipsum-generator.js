@@ -145,7 +145,7 @@
 					paragraphs: this.generateIpsum()
 				};
 
-			this.$el.find('.intro-copy').fadeOut(500, function() {
+			this.$el.find('.intro-copy').slideUp(500, function() {
 				if ( $startupIpsum.length === 0 ) {
 					that.$el.find('button').html('Iterate!');
 					that.setupTemplate(content).find('#startup-ipsum').slideDown(800);
