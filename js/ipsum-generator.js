@@ -108,7 +108,7 @@
 				breakpoints: [
 					961
 				]
-			});     
+			});
 
 			$window.bind('enterBreakpoint961', function() {
 				$creators.insertBefore($socialLinks);
