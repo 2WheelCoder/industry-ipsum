@@ -106,15 +106,15 @@
 			$window.setBreakpoints({
 				distinct: true,
 				breakpoints: [
-					960
-				] 
-			});     
+					961
+				]
+			});
 
-			$window.bind('enterBreakpoint960', function() {
+			$window.bind('enterBreakpoint961', function() {
 				$creators.insertBefore($socialLinks);
 			});
 
-			$window.bind('exitBreakpoint960', function() {
+			$window.bind('exitBreakpoint961', function() {
 				$creators.insertAfter($socialLinks);
 			});
 		},
